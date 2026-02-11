@@ -60,13 +60,13 @@ jobs:
         DB_NAME: postgres
       run: python src/crawler.py
 
-    - name: Dump database contents
+    - name: Dump database contents to CSV
       env:
         PGPASSWORD: postgres
-      run: pg_dump --host=localhost --username=postgres --dbname=postgres --file=db_dump.sql
+      run: psql -h localhost -U postgres -d postgres -c "\copy repositories TO 'db_dump.csv' WITH (FORMAT CSV, HEADER);"
 
     - name: Upload database dump as artifact
       uses: actions/upload-artifact@v4
       with:
         name: database-dump
-        path: db_dump.sql
+        path: db_dump.csv
