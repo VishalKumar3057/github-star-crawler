@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+myenv/
+AI Engineer.pdf
+instructions.md
+SCALABILITY.md

@@ -291,5 +291,3 @@ For example, when crawling a PR for comments:
 -   The `pull_requests.comments_count` could be updated by a separate periodic job or a trigger, or updated in the crawler itself after processing all comments for a PR.
 
 This normalized and UPSERT-driven approach ensures that each piece of metadata is stored in its appropriate table, and updates are performed with minimal row changes, leading to an efficient and scalable data model.
-#   g i t h u b - s t a r - c r a w l e r  
- 
